@@ -6,7 +6,9 @@
 This wrapper is designed to easily create and get bins from [sourcebin](https://sourceb.in/). You are also able to shorten the sourcebin links.
 
 ### Install
-`npm install sourcebin --save`
+```
+npm install sourcebin --save
+```
 
 ### Setup
 ```js
@@ -27,7 +29,9 @@ sourcebin.create([
 
 ### Get a bin
 Syntax:
-`sourcebin.get("key")`
+```
+sourcebin.get("key")
+```
 
 Example:
 ```js
@@ -38,7 +42,9 @@ sourcebin.get("62cbad45ff")
 
 ### Shorten
 Syntax:
-`sourcebin.shorten("key")`
+```
+sourcebin.shorten("key")
+```
 
 Example:
 ```js
@@ -72,8 +78,9 @@ Sample output for the **get** and **create** methods:
 ```
 
 Sample output for the **shorten** method:
-`http://srcb.in/62cbad45ff`
-
+```
+http://srcb.in/62cbad45ff
+```
 ### Support
 
-You can message me on discord `GHOST#7524` or create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
+You can message me on discord: `GHOST#7524` or create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
