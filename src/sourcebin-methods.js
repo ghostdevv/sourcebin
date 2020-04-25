@@ -23,6 +23,8 @@ module.exports = class SourceBinMethods {
                 .then(res => res.json())
                 .then(data => {
 
+                    if (data.message) return reject(new Error(data.message))
+                    
                     let parsedFiles = data.files.map(f => {
                         
                         return {
