@@ -1,0 +1,34 @@
+{
+  "name": "sourcebin",
+  "version": "2.0.0",
+  "description": "Easy and simple package to create and get bins from https://sourceb.in",
+  "main": "index.js",
+  "dependencies": {
+    "@sourcebin/linguist": "0.0.3",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "sourcebin",
+    "bin",
+    "bin wrapper",
+    "sourcebin wrapper",
+    "source",
+    "source bin",
+    "sourcebin api",
+    "sourcebin api wrapper",
+    "sourcebin create",
+    "sourcebin get"
+  ],
+  "author": "GHOST",
+  "license": "ISC",
+  "homepage": "https://github.com/ghostdevv/Sourcebin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghostdevv/Sourcebin"
+  },
+  "bugs": {
+    "url": "https://github.com/ghostdevv/Sourcebin"
+  },
+  "deprecated": false
+}
