@@ -73,3 +73,7 @@ Sample output for the **get** and **create** methods:
 
 Sample output for the **shorten** method:
 `http://srcb.in/62cbad45ff`
+
+### Support
+
+You can message me on discord @ GHOST#7524 or create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
