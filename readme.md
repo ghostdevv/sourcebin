@@ -38,7 +38,7 @@ sourcebin.get("62cbad45ff")
 
 ### Shorten
 Syntax:
-sourcebin.shorten("key")
+`sourcebin.shorten("key")`
 
 Example:
 ```js
