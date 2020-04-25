@@ -17,6 +17,8 @@ module.exports = class SourceBinMethods {
 
             if (!key || !key.match(/[0-9a-fA-F]{10}/g)) return reject(new SyntaxError('Invalid key provided - SourceBin#get'));
 
+            key = key.match(/[0-9a-fA-F]{10}/g)[0];
+
             fetch(formGetURL(key))
                 .then(res => res.json())
                 .then(data => {
@@ -128,6 +130,8 @@ module.exports = class SourceBinMethods {
 
         if (!key || !key.match(/[0-9a-fA-F]{10}/g)) throw new SyntaxError('Invalid key provided - SourceBin#shorten')
 
+        key = key.match(/[0-9a-fA-F]{10}/g)[0];
+        
         return `http://srcb.in/${key}`;
         
     };
