@@ -76,4 +76,4 @@ Sample output for the **shorten** method:
 
 ### Support
 
-You can message me on discord @ GHOST#7524 or create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
+You can message me on discord `GHOST#7524` or create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
