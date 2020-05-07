@@ -40,7 +40,7 @@ module.exports = class SourceBinMethods {
                     resolve({
                         key: key,
                         url: `https://sourceb.in/${key}`,
-                        raw: `https://sourceb.in/raw/${key}`,
+                        raw: `https://sourceb.in/raw/${key}/0`,
                         short: this.shorten(key),
                         created: data.created,
                         files: parsedFiles
@@ -115,7 +115,7 @@ module.exports = class SourceBinMethods {
 
                     key: res.key,
                     url: `https://sourceb.in/${res.key}`,
-                    raw: `https://sourceb.in/raw/${res.key}`,
+                    raw: `https://sourceb.in/raw/${res.key}/0`,
                     short: this.shorten(res.key),
                     created: new Date(),
                     files: parsedFiles
