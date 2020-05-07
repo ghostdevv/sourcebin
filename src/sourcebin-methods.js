@@ -25,13 +25,18 @@ module.exports = class SourceBinMethods {
 
                     if (data.message) return reject(new Error(data.message))
                     
+                    let cont = 0;
+                    
                     let parsedFiles = data.files.map(f => {
                         
+                        cont++;  
+
                         return {
 
+                            raw: `https://sourceb.in/raw/${key}/${cont - 1}`,
+                            content: f.content,
                             languageId: f.languageId,
                             language: linguist[f.languageId],
-                            content: f.content,
 
                         };
 
@@ -40,7 +45,6 @@ module.exports = class SourceBinMethods {
                     resolve({
                         key: key,
                         url: `https://sourceb.in/${key}`,
-                        raw: `https://sourceb.in/raw/${key}/0`,
                         short: this.shorten(key),
                         created: data.created,
                         files: parsedFiles
@@ -99,13 +103,18 @@ module.exports = class SourceBinMethods {
             .then(res => res.json())
             .then(res => {
             
-                let parsedFiles = parsedBins.map(f => {
-                        
+                let cont = 0;
+
+                let parsedFiles = parsedBins.map(f => { 
+
+                    cont++;  
+
                     return {
 
-                        languageId: f.languageId,
-                        language: linguist[f.languageId],
+                        raw: `https://sourceb.in/raw/${res.key}/${cont - 1}`,
                         content: f.content,
+                        languageId: f.languageId,
+                        language: linguist[f.languageId]
 
                     };
 
@@ -115,7 +124,6 @@ module.exports = class SourceBinMethods {
 
                     key: res.key,
                     url: `https://sourceb.in/${res.key}`,
-                    raw: `https://sourceb.in/raw/${res.key}/0`,
                     short: this.shorten(res.key),
                     created: new Date(),
                     files: parsedFiles

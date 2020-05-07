@@ -58,11 +58,12 @@ Sample output for the **get** and **create** methods:
 {
   "key": "62cbad45ff",
   "url": "https://sourceb.in/62cbad45ff",
-  "raw": "https://sourceb.in/raw/62cbad45ff",
   "short": "http://srcb.in/62cbad45ff",
   "created": "2020-04-25T20:32:28.462Z",
   "files": [
     {
+      "raw": "https://sourceb.in/raw/62cbad45ff/0",
+      "content": "This bin was made using npmjs.org/sourcebin",
       "languageId": 372,
       "language": {
         "name": "Text",
@@ -72,7 +73,7 @@ Sample output for the **get** and **create** methods:
         ],
         "aceMode": "text"
       },
-      "content": "This bin was made using npmjs.org/sourcebin"
+      
     }
   ]
 }
