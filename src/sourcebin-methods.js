@@ -34,6 +34,7 @@ module.exports = class SourceBinMethods {
                         return {
 
                             raw: `https://sourceb.in/raw/${key}/${cont - 1}`,
+                            name: f.name,
                             content: f.content,
                             languageId: f.languageId,
                             language: linguist[f.languageId],
@@ -77,12 +78,10 @@ module.exports = class SourceBinMethods {
 
                 bin.languageId = this.getLanguageId(bin.languageId);
 
-                parsedBins.push({
+                let parsedBin = { content: bin.content, languageId: bin.languageId };
+                if (bin.name) parsedBin.name = bin.name;
 
-                    content: bin.content,
-                    languageId: bin.languageId
-                
-                });
+                parsedBins.push(parsedBin);
 
             };
 
@@ -117,6 +116,7 @@ module.exports = class SourceBinMethods {
                     return {
 
                         raw: `https://sourceb.in/raw/${res.key}/${cont - 1}`,
+                        name: f.name,
                         content: f.content,
                         languageId: f.languageId,
                         language: linguist[f.languageId]

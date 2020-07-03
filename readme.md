@@ -21,6 +21,7 @@ const sourcebin = require('sourcebin');
 ```js
 sourcebin.create([
 	{
+    name: 'File Name (optional)',
 		content: 'This bin was made using npmjs.org/sourcebin',
 		languageId: 'text'
 	}
@@ -33,6 +34,7 @@ sourcebin.create([
 
 sourcebin.create([
 	{
+    name: 'File Name (optional)',
 		content: 'This bin was made using npmjs.org/sourcebin',
 		languageId: 'text'
 	}
@@ -80,6 +82,7 @@ Sample output for the **get** and **create** methods:
   "files": [
     {
       "raw": "https://sourceb.in/raw/62cbad45ff/0",
+      "name": undefined,
       "content": "This bin was made using npmjs.org/sourcebin",
       "languageId": 372,
       "language": {
