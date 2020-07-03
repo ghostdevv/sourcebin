@@ -46,6 +46,8 @@ module.exports = class SourceBinMethods {
                         key: key,
                         url: `https://sourceb.in/${key}`,
                         short: this.shorten(key),
+                        title: data.title,
+                        description: data.description,
                         created: data.created,
                         files: parsedFiles
                     });
@@ -57,7 +59,7 @@ module.exports = class SourceBinMethods {
 
     };
 
-    static create = (bins) => {
+    static create = (bins, options = {}) => {
 
         return new Promise((resolve, reject) => {
 
@@ -84,11 +86,14 @@ module.exports = class SourceBinMethods {
 
             };
 
+            const binObject = { files: parsedBins };
+
+            if (options.title) binObject.title = options.title;
+            if (options.description) binObject.description = options.description;
+
             fetch(formPostURL(), {
                 method: 'POST',
-                body: JSON.stringify({
-                    files: parsedBins,
-                }),
+                body: JSON.stringify(binObject),
                 headers: {
                     'Content-Type': 'application/json',
                     'User-Agent': `npm/sourcebin @ V${version}`
@@ -125,6 +130,8 @@ module.exports = class SourceBinMethods {
                     key: res.key,
                     url: `https://sourceb.in/${res.key}`,
                     short: this.shorten(res.key),
+                    title: options.title,
+                    description: options.description,
                     created: new Date(),
                     files: parsedFiles
 

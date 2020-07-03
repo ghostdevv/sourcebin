@@ -17,7 +17,7 @@ const sourcebin = require('sourcebin');
 ```
 
 ### Create a bin
-`sourcebin.create([ bin-objects ])`
+`sourcebin.create([ bin-objects ], { options })`
 ```js
 sourcebin.create([
 	{
@@ -25,6 +25,21 @@ sourcebin.create([
 		languageId: 'text'
 	}
 ]).then(console.log)
+  .catch(console.error);
+
+/*
+  Add a title and/or description
+*/
+
+sourcebin.create([
+	{
+		content: 'This bin was made using npmjs.org/sourcebin',
+		languageId: 'text'
+	}
+], { 
+  title: 'Hello World!',
+  description: 'My test sourcebin'
+}).then(console.log)
   .catch(console.error);
 ```
 
@@ -59,6 +74,8 @@ Sample output for the **get** and **create** methods:
   "key": "62cbad45ff",
   "url": "https://sourceb.in/62cbad45ff",
   "short": "http://srcb.in/62cbad45ff",
+  "title": undefined,
+  "description": undefined,
   "created": "2020-04-25T20:32:28.462Z",
   "files": [
     {
