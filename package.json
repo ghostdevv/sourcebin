@@ -1,6 +1,6 @@
 {
   "name": "sourcebin",
-  "version": "3.2.4",
+  "version": "3.2.5",
   "description": "Easy and simple package to create and get bins from https://sourceb.in",
   "main": "index.js",
   "dependencies": {
