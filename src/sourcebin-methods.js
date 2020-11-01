@@ -145,9 +145,9 @@ module.exports = class SourceBinMethods {
 
     static shorten = (key) => {
 
-        if (!key || !key.match(/[0-9a-fA-F]{10}/g)) throw new SyntaxError('Invalid key provided - SourceBin#shorten')
+        if (!key || !key.match(/[\w]{10}/gi)) throw new SyntaxError('Invalid key provided - SourceBin#shorten')
 
-        key = key.match(/[0-9a-fA-F]{10}/g)[0];
+        key = key.match(/[\w]{10}/gi)[0];
         
         return `http://srcb.in/${key}`;
         
