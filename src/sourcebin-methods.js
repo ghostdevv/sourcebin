@@ -15,9 +15,9 @@ module.exports = class SourceBinMethods {
 
         return new Promise((resolve, reject) => {
 
-            if (!key || !key.match(/[0-9a-fA-F]{10}/g)) return reject(new SyntaxError('Invalid key provided - SourceBin#get'));
+            if (!key || !key.match(/[0-9a-zA-Z]{10}/g)) return reject(new SyntaxError('Invalid key provided - SourceBin#get'));
 
-            key = key.match(/[0-9a-fA-F]{10}/g)[0];
+            key = key.match(/[0-9a-zA-Z]{10}/g)[0];
 
             fetch(formGetURL(key))
                 .then(res => res.json())
