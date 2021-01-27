@@ -21,27 +21,27 @@ module.exports = class SourceBinMethods {
 
             fetch(formGetURL(key))
                 .then(res => res.json())
-                .then(data => {
+                .then(async data => {
 
                     if (data.message) return reject(new Error(data.message))
                     
                     let cont = 0;
-                    
-                    let parsedFiles = data.files.map(f => {
-                        
-                        cont++;  
 
-                        return {
+                    let parsedFiles = [];
 
+                    for (const f of data.files) {
+                        cont++;
+
+                        const content = await this.fetchContent(key, cont - 1);
+
+                        parsedFiles.push({
                             raw: `https://sourceb.in/raw/${key}/${cont - 1}`,
                             name: f.name,
-                            content: f.content,
+                            content,
                             languageId: f.languageId,
                             language: linguist[f.languageId],
-
-                        };
-
-                    });
+                        });
+                    };
 
                     resolve({
                         key: key,
@@ -173,4 +173,18 @@ module.exports = class SourceBinMethods {
 
     };
 
+    static fetchContent = async (key, index) => {
+        return new Promise((resolve, reject) => {
+            const url = `https://cdn.sourceb.in/bins/${key}/${index}`;
+
+            fetch(url, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': `npm/sourcebin @ V${version}`
+                }
+            })
+            .then(res => res.text())
+            .then(res => resolve(res));
+        });
+    };
 };
