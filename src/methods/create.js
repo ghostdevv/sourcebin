@@ -5,6 +5,11 @@ module.exports = async (files = [], options = {}) => {
     if (!Array.isArray(files) || files.length == 0)
         throw new SyntaxError('Please give a array of files');
 
+    if (files.length > 1)
+        throw new Error(
+            'Having multiple files in one bin is only for pro users, authentication is not currently supported via this wrapper',
+        );
+
     for (const file of files) {
         if (file.language == undefined) file.language = 'text';
 
