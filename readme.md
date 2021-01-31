@@ -39,15 +39,50 @@ import { get, create, url } from 'sourcebin';
 
 For es imports such as the TypeScript import it's recommened you only import the methods you need
 
-# Methods
+# Get a bin
 
--   ### Get
-    `sourcebin.get(key or url, options)`<br>
-    ```js
-    const bin = await sourcebin.get('qXO2NVhRc6');
-    ```
--   ### Create
-    // To do
+`sourcebin.get(key or url, options)`
+
+```js
+const bin = await sourcebin.get('qXO2NVhRc6');
+```
+
+#### Options:
+
+`fetchContent` - whether to fetch bin content or not (default true)
+
+# Create a bin
+
+`sourcebin.create([ files ], options)`<br>
+
+```js
+const bin = await sourcebin.create(
+    [
+        {
+            content: 'Hello World',
+            language: 'text',
+        },
+    ],
+    {
+        name: 'bin name',
+        description: 'test bin',
+    },
+);
+```
+
+#### Files
+
+`name` - file name<br>
+`content` - file content (required)<br>
+`language` - language or language id (default text)<br>
+
+#### Options
+
+`title` - bin title<br>
+`description` - bin description
+
+# Other Methods
+
 -   ### Url
 
     `sourcebin.url(key or url)`<br>
@@ -55,6 +90,11 @@ For es imports such as the TypeScript import it's recommened you only import the
     ```js
     const { url, short } = await url('qXO2NVhRc6');
     ```
+
+# FAQ
+
+-   ### Multiple files in one bin
+    This is not currently possible with this wrapper as sourcebin doesn't have a token system for authentication, only pro users are able to have multiple files in one bin. This may come in the future
 
 # Support
 
