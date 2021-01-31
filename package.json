@@ -1,6 +1,6 @@
 {
     "name": "sourcebin",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "description": "Fast and simple package to get and create bins from https://sourceb.in/",
     "main": "./src/index.cjs",
     "module": "./src/index.mjs",
