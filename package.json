@@ -2,7 +2,7 @@
     "name": "sourcebin",
     "version": "4.0.0-dev",
     "description": "Fast and simple package to get and create bins from https://sourceb.in/",
-    "main": "./src/index.js",
+    "main": "./src/index.cjs",
     "module": "./src/index.mjs",
     "types": "./src/index.d.ts",
     "exports": {
