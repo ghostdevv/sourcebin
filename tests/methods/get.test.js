@@ -7,7 +7,7 @@ test('check that get method returns expected response', async () => {
     expect(res);
 });
 
-test('check that fetchContent option works as expects', async () => {
+test('check that fetchContent option works as expected', async () => {
     const res = await get(key);
 
     const withOption = await get(key, {
