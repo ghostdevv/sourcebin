@@ -1,3 +1,1 @@
-module.exports = {
-    get: require('./methods/get.js'),
-};
+module.exports = require('./methods');
