@@ -1,7 +1,3 @@
-# WARNING
-
-This is the development branch for the next version of Sourcenin, please don't use this in production.
-
 # Sourcebin
 
 [![](https://img.shields.io/npm/v/sourcebin?label=Latest%20Version&style=for-the-badge&logo=npm&color=informational)](https://www.npmjs.com/package/sourcebin)
