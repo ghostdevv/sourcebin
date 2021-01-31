@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/npm/v/sourcebin?label=Latest%20Version&style=for-the-badge&logo=npm&color=informational)](https://www.npmjs.com/package/sourcebin)
 [![](https://img.shields.io/static/v1?label=Project%20Creator&message=GHOST&color=informational&style=for-the-badge)](https://ghostdev.xyz)
-[![](https://img.shields.io/github/workflow/status/ghoststools/Sourcebin/CI/master?style=for-the-badge)](https://github.com/ghoststools/Sourcebin)
+[![](https://img.shields.io/github/workflow/status/ghoststools/Sourcebin/Test%20Suite%20CI?style=for-the-badge)](https://github.com/ghoststools/Sourcebin)
 [![](https://img.shields.io/static/v1?label=&message=A%20GHOSTs%20Tools%20Project&color=informational&style=for-the-badge)](https://github.com/ghoststools)
 
 Fast and simple package to get and create bins from [sourcebin](https://sourceb.in/)
