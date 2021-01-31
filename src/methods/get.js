@@ -3,7 +3,7 @@ const { resolveKey, fetch } = require('../util');
 
 module.exports = async (key, options = {}) => {
     key = resolveKey(key);
-    if (!key) throw new SyntaxError('Expected a valid bin key');
+    if (!key) throw new SyntaxError('Expected a valid bin key or url');
 
     const defaultOptions = {
         fetchContent: true,
