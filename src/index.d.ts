@@ -18,7 +18,7 @@ declare module 'sourcebin' {
         bins: {
             name?: string;
             content: string;
-            language: string | number;
+            language?: string | number;
         }[],
         options?: {
             name?: string;
