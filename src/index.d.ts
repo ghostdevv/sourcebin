@@ -12,10 +12,7 @@ declare module 'sourcebin' {
         options?: {
             fetchContent?: boolean;
         },
-    ): SourceBin;
-
-    export { url, get };
-    export default { url, get };
+    ): Promise<SourceBin>;
 
     class SourceBin {
         constructor(
@@ -32,6 +29,16 @@ declare module 'sourcebin' {
                 files: File[];
             },
         );
+
+        get key(): string;
+        get url(): string;
+        get short(): string;
+        get title(): string | undefined;
+        get description(): string | undefined;
+        get views(): number;
+        get created(): string;
+        get timestamp(): number;
+        get files(): File[];
     }
 
     class File {
@@ -50,5 +57,15 @@ declare module 'sourcebin' {
                 };
             },
         );
+
+        get name(): string;
+        get content(): string;
+        get languageId(): number;
+        get language(): {
+            name: string;
+            extension: string;
+            aliases: string[];
+            aceMode: string;
+        };
     }
 }
