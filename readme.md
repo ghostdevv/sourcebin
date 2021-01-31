@@ -34,7 +34,7 @@ const sourcebin = require('sourcebin');
 TypeScript
 
 ```ts
-// TO DO
+import { get, create, url } from 'sourcebin';
 ```
 
 For es imports such as the TypeScript import it's recommened you only import the methods you need
