@@ -9,7 +9,7 @@ class SourceBin {
 
         this.title = data.title;
         this.description = data.description;
-        this.views = data.hits;
+        this.views = data.hits || data.views;
 
         this.created = data.created;
         this.timestamp = new Date(data.created).getTime();
