@@ -4,6 +4,7 @@
     "description": "Fast and simple package to get and create bins from https://sourceb.in/",
     "main": "./src/index.js",
     "module": "./src/index.mjs",
+    "types": "./src/index.d.ts",
     "exports": {
         ".": [
             {
