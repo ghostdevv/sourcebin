@@ -14,6 +14,18 @@ declare module 'sourcebin' {
         },
     ): Promise<SourceBin>;
 
+    export function create(
+        bins: {
+            name?: string;
+            content: string;
+            language: string | number;
+        }[],
+        options?: {
+            name?: string;
+            description?: string;
+        },
+    ): Promise<SourceBin>;
+
     class SourceBin {
         constructor(
             key: string,
