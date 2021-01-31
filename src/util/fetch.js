@@ -12,5 +12,7 @@ module.exports = async (url, options = {}) => {
             ...options.headers,
             'User-Agent': `Sourcebin/${version} https://www.npmjs.com/package/sourcebin`,
         },
-    }).then((res) => res.body);
+    })
+        .then((res) => res.body)
+        .catch((res) => undefined);
 };
