@@ -9,9 +9,15 @@ const { resolveKey, fetch } = require('../util');
 
 /**
  * Get a bin
+ * @typedef GetMethod
  * @param {string} key sourcebin key or url
  * @param {GetOptions} [options]
  * @return {Promise<SourceBin>}
+ */
+
+/**
+ * Get a bin
+ * @method GetMethod get a bin
  */
 module.exports = async (key, options = {}) => {
     key = resolveKey(key);

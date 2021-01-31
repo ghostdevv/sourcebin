@@ -11,11 +11,17 @@ const get = require('./get.js');
 
 /**
  * Create a bin
+ * @typedef CreateMethod
  * @param {FileObject} files bin files
  * @param {Object} [options] bin options
  * @param {string} [options.title] bin title
  * @param {string} [options.description] bin description
  * @return {Promise<SourceBin>}
+ */
+
+/**
+ * Create a bin
+ * @typedef CreateMethod create a bin
  */
 module.exports = async (files = [], options = {}) => {
     if (!Array.isArray(files) || files.length == 0)

@@ -6,5 +6,11 @@ import create from './methods/create.js';
  * SourceBin
  * @module sourcebin
  */
-export { get, url, create };
+
+/**
+ * Methods
+ * @property {GetMethod}
+ * @property {UrlMethod}
+ * @property {CreateMethod}
+ */
 export default { get, url, create };

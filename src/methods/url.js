@@ -10,8 +10,14 @@ const { resolveKey } = require('../util');
 
 /**
  * Get url and short url from key
+ * @typedef UrlMethod
  * @param {string} key sourcebin key or url
  * @return {UrlData}
+ */
+
+/**
+ * Get url and short url from key
+ * @method UrlMethod Get url and short url from key
  */
 module.exports = (key) => {
     key = resolveKey(key);
