@@ -1,6 +1,8 @@
 const { linguist, languages } = require('@sourcebin/linguist');
 
 module.exports = (item) => {
+    if (item == undefined) return undefined;
+
     if (linguist[item]) return item;
     if (typeof item == 'number') return undefined;
 
