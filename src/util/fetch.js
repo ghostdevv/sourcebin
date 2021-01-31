@@ -1,6 +1,12 @@
 const { version } = require('../../package.json');
 const got = require('got');
 
+/**
+ * Makes a request
+ * @param {string} url url to make request to
+ * @param {Object} [options] fetch options
+ * @return {Promise<Object|undefined>} The requested data or response
+ */
 module.exports = async (url, options = {}) => {
     return got(url, {
         json: options.data,

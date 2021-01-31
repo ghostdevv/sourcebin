@@ -1,5 +1,13 @@
 const resolveLanguageId = require('./resolveLanguageId.js');
 
+/**
+ * Validate a file object
+ * @param {Object} file file object
+ * @param {string} file.name file name
+ * @param {string} file.content file content
+ * @param {string|number} file.language file language string or id
+ * @return {true|TypeError|SyntaxError} True if valid file or error if not
+ */
 module.exports = ({ name, content, language } = {}) => {
     if (name && typeof name != 'string')
         return new TypeError(

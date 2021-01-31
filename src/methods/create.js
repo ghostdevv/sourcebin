@@ -1,6 +1,22 @@
 const { validateFile, fetch, resolveLanguageId } = require('../util');
 const get = require('./get.js');
 
+/**
+ * File Data Object
+ * @typedef {Object} FileObject
+ * @property {string} [name] file name
+ * @property {string} content file content
+ * @property {number|string} language language or language id
+ */
+
+/**
+ * Create a bin
+ * @param {FileObject} files bin files
+ * @param {Object} [options] bin options
+ * @param {string} [options.title] bin title
+ * @param {string} [options.description] bin description
+ * @return {Promise<SourceBin>}
+ */
 module.exports = async (files = [], options = {}) => {
     if (!Array.isArray(files) || files.length == 0)
         throw new SyntaxError('Please give a array of files');

@@ -1,6 +1,18 @@
 const { SourceBin } = require('../Structures');
 const { resolveKey, fetch } = require('../util');
 
+/**
+ * Get options
+ * @typedef GetOptions options used when getting a bin
+ * @property {boolean} [fetchContent=true] whether to fetch content or not
+ */
+
+/**
+ * Get a bin
+ * @param {string} key sourcebin key or url
+ * @param {GetOptions} [options]
+ * @return {Promise<SourceBin>}
+ */
 module.exports = async (key, options = {}) => {
     key = resolveKey(key);
     if (!key) throw new SyntaxError('Expected a valid bin key or url');
