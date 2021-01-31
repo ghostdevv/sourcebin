@@ -53,7 +53,7 @@ For es imports such as the TypeScript import it's recommened you only import the
     `sourcebin.url(key or url)`<br>
 
     ```js
-    const { url, short } = url('qXO2NVhRc6');
+    const { url, short } = await url('qXO2NVhRc6');
     ```
 
 # Support
