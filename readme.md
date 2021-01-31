@@ -1,108 +1,63 @@
+# WARNING
 
+This is the development branch for the next version of Sourcenin, please don't use this in production.
 
 # Sourcebin
+
 [![](https://img.shields.io/npm/v/sourcebin?label=Latest%20Version&style=for-the-badge&logo=npm&color=informational)](https://www.npmjs.com/package/sourcebin)
-[![](https://img.shields.io/static/v1?label=Author&message=GHOST&color=informational&style=for-the-badge)](https://ghostdev.xyz)
+[![](https://img.shields.io/static/v1?label=Project%20Creator&message=GHOST&color=informational&style=for-the-badge)](https://ghostdev.xyz)
+[![](https://img.shields.io/github/workflow/status/ghoststools/Sourcebin/CI/master?style=for-the-badge)](https://github.com/ghoststools/Sourcebin)
+[![](https://img.shields.io/static/v1?label=&message=A%20GHOSTs%20Tools%20Project&color=informational&style=for-the-badge)](https://github.com/ghoststools)
 
-This wrapper is designed to easily create and get bins from [sourcebin](https://sourceb.in/). You are also able to shorten the sourcebin links.
+Fast and simple package to get and create bins from [sourcebin](https://sourceb.in/)
 
-### Install
+# Requirements
+
 ```
-npm install sourcebin --save
+NodeJS >= 10.x
 ```
 
-### Setup
+# Install
+
+```
+npm install sourcebin
+```
+
+# Setup
+
+Node JS
+
 ```js
 const sourcebin = require('sourcebin');
 ```
 
-### Create a bin
-`sourcebin.create([ bin-objects ], { options })`
-```js
-sourcebin.create([
-	{
-    name: 'File Name (optional)',
-		content: 'This bin was made using npmjs.org/sourcebin',
-		languageId: 'text'
-	}
-]).then(console.log)
-  .catch(console.error);
+TypeScript
 
-/*
-  Add a title and/or description
-*/
-
-sourcebin.create([
-	{
-    name: 'File Name (optional)',
-		content: 'This bin was made using npmjs.org/sourcebin',
-		languageId: 'text'
-	}
-], { 
-  title: 'Hello World!',
-  description: 'My test sourcebin'
-}).then(console.log)
-  .catch(console.error);
+```ts
+// TO DO
 ```
 
-### Get a bin
-Syntax:
-```
-sourcebin.get("key or sourcebin url")
-```
+For es imports such as the TypeScript import it's recommened you only import the methods you need
 
-Example:
-```js
-sourcebin.get("62cbad45ff")
-	.then(console.log)
-	.catch(console.error);
-```
+# Methods
 
-### Shorten
-Syntax:
-```
-sourcebin.shorten("key or sourcebin url")
-```
+-   ### Get
+    `sourcebin.get(key or url, options)`<br>
+    ```js
+    const bin = await sourcebin.get('qXO2NVhRc6');
+    ```
+-   ### Create
+    // To do
+-   ### Url
 
-Example:
-```js
-var shortLink = sourcebin.shorten("62cbad45ff");
-```
+    `sourcebin.url(key or url)`<br>
 
-### Output
-Sample output for the **get** and **create** methods:
-```json
-{
-  "key": "62cbad45ff",
-  "url": "https://sourceb.in/62cbad45ff",
-  "short": "http://srcb.in/62cbad45ff",
-  "title": undefined,
-  "description": undefined,
-  "created": "2020-04-25T20:32:28.462Z",
-  "files": [
-    {
-      "raw": "https://sourceb.in/raw/62cbad45ff/0",
-      "name": undefined,
-      "content": "This bin was made using npmjs.org/sourcebin",
-      "languageId": 372,
-      "language": {
-        "name": "Text",
-        "extension": "txt",
-        "aliases": [
-          "fundamental"
-        ],
-        "aceMode": "text"
-      },
-      
-    }
-  ]
-}
-```
+    ```js
+    const { url, short } = url('qXO2NVhRc6');
+    ```
 
-Sample output for the **shorten** method:
-```
-http://srcb.in/62cbad45ff
-```
-### Support
+# Support
 
-You can message me on discord: `GHOST#7524` or create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
+-   Message me on discord: `GHOST#7524`<br>
+-   Join the [discord](https://discord.gg/2Vd4wAjJnm)
+-   Create a issue on the [github](https://github.com/ghoststools/Sourcebin)
