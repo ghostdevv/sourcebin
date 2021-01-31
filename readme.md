@@ -1,108 +1,99 @@
-
-
 # Sourcebin
+
 [![](https://img.shields.io/npm/v/sourcebin?label=Latest%20Version&style=for-the-badge&logo=npm&color=informational)](https://www.npmjs.com/package/sourcebin)
-[![](https://img.shields.io/static/v1?label=Author&message=GHOST&color=informational&style=for-the-badge)](https://ghostdev.xyz)
+[![](https://img.shields.io/static/v1?label=Project%20Creator&message=GHOST&color=informational&style=for-the-badge)](https://ghostdev.xyz)
+[![](https://img.shields.io/github/workflow/status/ghoststools/Sourcebin/CI/master?style=for-the-badge)](https://github.com/ghoststools/Sourcebin)
+[![](https://img.shields.io/static/v1?label=&message=A%20GHOSTs%20Tools%20Project&color=informational&style=for-the-badge)](https://github.com/ghoststools)
 
-This wrapper is designed to easily create and get bins from [sourcebin](https://sourceb.in/). You are also able to shorten the sourcebin links.
+Fast and simple package to get and create bins from [sourcebin](https://sourceb.in/)
 
-### Install
+# Requirements
+
 ```
-npm install sourcebin --save
+NodeJS >= 10.x
 ```
 
-### Setup
+# Install
+
+```
+npm install sourcebin
+```
+
+# Setup
+
+Node JS
+
 ```js
 const sourcebin = require('sourcebin');
 ```
 
-### Create a bin
-`sourcebin.create([ bin-objects ], { options })`
+TypeScript
+
+```ts
+import { get, create, url } from 'sourcebin';
+```
+
+For es imports such as the TypeScript import it's recommened you only import the methods you need
+
+# Get a bin
+
+`sourcebin.get(key or url, options)`
+
 ```js
-sourcebin.create([
-	{
-    name: 'File Name (optional)',
-		content: 'This bin was made using npmjs.org/sourcebin',
-		languageId: 'text'
-	}
-]).then(console.log)
-  .catch(console.error);
-
-/*
-  Add a title and/or description
-*/
-
-sourcebin.create([
-	{
-    name: 'File Name (optional)',
-		content: 'This bin was made using npmjs.org/sourcebin',
-		languageId: 'text'
-	}
-], { 
-  title: 'Hello World!',
-  description: 'My test sourcebin'
-}).then(console.log)
-  .catch(console.error);
+const bin = await sourcebin.get('qXO2NVhRc6');
 ```
 
-### Get a bin
-Syntax:
-```
-sourcebin.get("key or sourcebin url")
-```
+#### Options:
 
-Example:
+`fetchContent` - whether to fetch bin content or not (default true)
+
+# Create a bin
+
+`sourcebin.create([ files ], options)`<br>
+
 ```js
-sourcebin.get("62cbad45ff")
-	.then(console.log)
-	.catch(console.error);
-```
-
-### Shorten
-Syntax:
-```
-sourcebin.shorten("key or sourcebin url")
-```
-
-Example:
-```js
-var shortLink = sourcebin.shorten("62cbad45ff");
-```
-
-### Output
-Sample output for the **get** and **create** methods:
-```json
-{
-  "key": "62cbad45ff",
-  "url": "https://sourceb.in/62cbad45ff",
-  "short": "http://srcb.in/62cbad45ff",
-  "title": undefined,
-  "description": undefined,
-  "created": "2020-04-25T20:32:28.462Z",
-  "files": [
+const bin = await sourcebin.create(
+    [
+        {
+            content: 'Hello World',
+            language: 'text',
+        },
+    ],
     {
-      "raw": "https://sourceb.in/raw/62cbad45ff/0",
-      "name": undefined,
-      "content": "This bin was made using npmjs.org/sourcebin",
-      "languageId": 372,
-      "language": {
-        "name": "Text",
-        "extension": "txt",
-        "aliases": [
-          "fundamental"
-        ],
-        "aceMode": "text"
-      },
-      
-    }
-  ]
-}
+        name: 'bin name',
+        description: 'test bin',
+    },
+);
 ```
 
-Sample output for the **shorten** method:
-```
-http://srcb.in/62cbad45ff
-```
-### Support
+#### Files
 
-You can message me on discord: `GHOST#7524` or create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
+`name` - file name<br>
+`content` - file content (required)<br>
+`language` - language or language id (default text)<br>
+
+#### Options
+
+`title` - bin title<br>
+`description` - bin description
+
+# Other Methods
+
+-   ### Url
+
+    `sourcebin.url(key or url)`<br>
+
+    ```js
+    const { url, short } = await url('qXO2NVhRc6');
+    ```
+
+# FAQ
+
+-   ### Multiple files in one bin
+    This is not currently possible with this wrapper as sourcebin doesn't have a token system for authentication, only pro users are able to have multiple files in one bin. This may come in the future
+
+# Support
+
+-   Message me on discord: `GHOST#7524`<br>
+-   Join the [discord](https://discord.gg/2Vd4wAjJnm)
+-   Create a issue on the [github](https://github.com/ghoststools/Sourcebin)
