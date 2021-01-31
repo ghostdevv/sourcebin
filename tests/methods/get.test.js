@@ -7,6 +7,11 @@ test('check that get method returns expected response', async () => {
     expect(res);
 });
 
+test('check that get method handles invalid key', async () => {
+    const res = await get('123');
+    expect(res).toThrow();
+});
+
 test('check that fetchContent option works as expected', async () => {
     const res = await get(key);
 
