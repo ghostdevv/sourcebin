@@ -46,7 +46,8 @@ module.exports = async (files = [], options = {}) => {
         method: 'POST',
         data: {
             files,
-            ...options,
+            title: options.title,
+            description: options.description,
         },
     });
 
