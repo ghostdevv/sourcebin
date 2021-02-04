@@ -1,7 +1,5 @@
 const { create } = require('../../src/methods');
 
-const key = 'qXO2NVhRc6';
-
 test('check that create method returns expected response', async () => {
     const res = await create([
         {
