@@ -21,7 +21,7 @@ declare module 'sourcebin' {
             language?: string | number;
         }[],
         options?: {
-            name?: string;
+            title?: string;
             description?: string;
         },
     ): Promise<SourceBin>;

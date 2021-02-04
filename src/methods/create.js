@@ -4,7 +4,7 @@ const get = require('./get.js');
 /**
  * File Data Object
  * @typedef {Object} FileObject
- * @property {string} [name] file name
+ * @property {string} [title] file title
  * @property {string} content file content
  * @property {number|string} language language or language id
  */
