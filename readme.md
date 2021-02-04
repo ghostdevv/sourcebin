@@ -60,7 +60,7 @@ const bin = await sourcebin.create(
         },
     ],
     {
-        name: 'bin name',
+        title: 'bin name',
         description: 'test bin',
     },
 );
