@@ -84,7 +84,7 @@ const bin = await sourcebin.create(
     `sourcebin.url(key or url)`<br>
 
     ```js
-    const { url, short } = await url('qXO2NVhRc6');
+    const { url, short } = url('qXO2NVhRc6');
     ```
 
 # FAQ
