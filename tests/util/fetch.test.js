@@ -15,7 +15,7 @@ test('checks that fetch post returns a expected response', async () => {
         },
     });
 
-    const data = JSON.parse(res.data);
+    const data = JSON.parse(res.data.data);
 
     expect(res);
     expect(data.testData).toBe(testData);
