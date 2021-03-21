@@ -19,6 +19,6 @@ module.exports = async (url, options = {}) => {
             'User-Agent': `Sourcebin/${version} https://www.npmjs.com/package/sourcebin`,
         },
     })
-        .then((res) => res.body)
-        .catch((res) => undefined);
+        .then((res) => ({ data: res.body }))
+        .catch((res) => ({ error: res }));
 };

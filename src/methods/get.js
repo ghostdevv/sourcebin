@@ -30,10 +30,14 @@ module.exports = async (key, options = {}) => {
     options = Object.assign(defaultOptions, options);
 
     const binData = await fetch(`https://sourceb.in/api/bins/${key}`);
-    if (!binData) throw new Error('There was a error in fetching bin data');
+    if (binData.error)
+        throw (
+            (console.error('There was a error in fetching bin data'),
+            binData.error)
+        );
 
     if (options.fetchContent) {
-        for (let i = 0; i < binData.files.length; i++) {
+        for (let i = 0; i < binData.data.files.length; i++) {
             const content = await fetch(
                 `https://cdn.sourceb.in/bins/${key}/${i}`,
                 {
@@ -41,19 +45,23 @@ module.exports = async (key, options = {}) => {
                 },
             );
 
-            if (!content)
-                throw new Error(
-                    'There was a error in fetching bin content for file ' + i,
+            if (content.error)
+                throw (
+                    (console.error(
+                        'There was a error in fetching bin content for file ' +
+                            i,
+                    ),
+                    content.error)
                 );
 
-            binData.files[i] = {
-                content,
-                ...binData.files[i],
+            binData.data.files[i] = {
+                content: content.data,
+                ...binData.data.files[i],
             };
         }
     }
 
-    const Bin = new SourceBin(key, binData);
+    const Bin = new SourceBin(key, binData.data);
 
     return Bin;
 };
