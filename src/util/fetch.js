@@ -20,5 +20,5 @@ module.exports = async (url, options = {}) => {
         },
     })
         .then((res) => ({ data: res.body }))
-        .catch((res) => ({ error: res }));
+        .catch((error) => ({ error }));
 };

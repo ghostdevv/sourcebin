@@ -52,7 +52,9 @@ module.exports = async (files = [], options = {}) => {
     });
 
     if (res.error)
-        throw (console.error('There was a error creating your bin'), res.error);
+        throw new Error(
+            'There was a error creating your bin: ' + res.error.message,
+        );
 
     const Bin = await get(res.data.key);
     if (!Bin) throw new Error('There was a error getting your bin');
