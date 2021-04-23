@@ -8,13 +8,18 @@ const { linguist, languages } = require('@sourcebin/linguist');
 module.exports = (item) => {
     if (item == undefined) return undefined;
 
-    if (linguist[item]) return item;
-    if (typeof item == 'number') return undefined;
+    if (typeof item === 'number')
+        return Object.values(languages).includes(item) ? item : undefined;
 
     item = item.toLowerCase();
 
-    for (const [lang, id] of Object.entries(languages)) {
-        if (lang.toLowerCase() == item) return id;
+    for (const [name, value] of Object.entries(languages)) {
+        if (name.toLowerCase() == item) return value;
+    }
+
+    for (const { name, aliases } of Object.values(linguist)) {
+        if (name == item || (aliases || []).includes(item))
+            return languages[name];
     }
 
     return undefined;
