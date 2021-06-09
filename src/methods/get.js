@@ -53,9 +53,7 @@ module.exports = async (key, options = {}) => {
         }
     }
 
-    const Bin = new SourceBin(key, binData.data);
-
-    return Bin;
+    return new SourceBin(key, binData.data);
 };
 
 class GetError extends Error {
