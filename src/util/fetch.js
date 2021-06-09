@@ -20,5 +20,12 @@ module.exports = async (url, options = {}) => {
         },
     })
         .then((res) => ({ data: res.body }))
-        .catch((error) => ({ error }));
+        .catch((error) => {
+            const { body } = error.response;
+
+            if (typeof body == 'object' && body.message)
+                error.message = body.message;
+
+            return { error };
+        });
 };
