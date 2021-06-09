@@ -28,7 +28,7 @@ module.exports = async (files = [], options = {}) => {
         throw new SyntaxError('Please give a array of files');
 
     if (files.length > 1)
-        throw new Error(
+        throw new CreateError(
             'Having multiple files in one bin is only for pro users, authentication is not currently supported via this wrapper',
         );
 
@@ -51,13 +51,17 @@ module.exports = async (files = [], options = {}) => {
         },
     });
 
-    if (res.error)
-        throw new Error(
-            'There was a error creating your bin: ' + res.error.message,
-        );
+    if (res.error) throw new CreateError(res.error.message);
 
     const Bin = await get(res.data.key);
-    if (!Bin) throw new Error('There was a error getting your bin');
+    if (!Bin) throw new CreateError('There was a error getting your bin');
 
     return Bin;
 };
+
+class CreateError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = 'CreateError';
+    }
+}

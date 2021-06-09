@@ -30,10 +30,7 @@ module.exports = async (key, options = {}) => {
     options = Object.assign(defaultOptions, options);
 
     const binData = await fetch(`https://sourceb.in/api/bins/${key}`);
-    if (binData.error)
-        throw new Error(
-            'There was a error in fetching bin data: ' + binData.error.message,
-        );
+    if (binData.error) throw new GetError(binData.error.message);
 
     if (options.fetchContent) {
         for (let i = 0; i < binData.data.files.length; i++) {
@@ -45,7 +42,7 @@ module.exports = async (key, options = {}) => {
             );
 
             if (content.error)
-                throw new Error(
+                throw new GetError(
                     `There was a error in fetching bin content for file ${i}: ${content.error.message}`,
                 );
 
@@ -60,3 +57,10 @@ module.exports = async (key, options = {}) => {
 
     return Bin;
 };
+
+class GetError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = 'GetError';
+    }
+}
