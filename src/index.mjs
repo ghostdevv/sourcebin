@@ -13,4 +13,6 @@ import create from './methods/create.js';
  * @property {UrlMethod}
  * @property {CreateMethod}
  */
+
+export { get, url, create };
 export default { get, url, create };
