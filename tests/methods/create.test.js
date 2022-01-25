@@ -30,17 +30,6 @@ test('check that create method can have title and description', async () => {
     expect(res.description).toBe('A test desc');
 });
 
-test('check that language defaults to text', async () => {
-    const res = await create([
-        {
-            content: 'test',
-        },
-    ]);
-
-    expect(res.files[0].content).toBe('test');
-    expect(res.files[0].language.name).toBe('Text');
-});
-
 test('check that multiple files throws an error', async () => {
     await create([
         {

@@ -54,13 +54,3 @@ test('check that validateFile returns error with no content', () => {
 
     expect(valid).not.toEqual(true);
 });
-
-test('check that validateFile returns error with no language', () => {
-    const file = {
-        content: 'test',
-    };
-
-    const valid = validateFile(file);
-
-    expect(valid).not.toEqual(true);
-});
