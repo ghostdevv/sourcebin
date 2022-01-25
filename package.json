@@ -40,12 +40,12 @@
         "sourcebin get"
     ],
     "author": "GHOST",
-    "homepage": "https://github.com/ghoststools/Sourcebin",
+    "homepage": "https://github.com/ghostdevv/Sourcebin",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ghoststools/Sourcebin"
+        "url": "git+https://github.com/ghostdevv/Sourcebin"
     },
     "bugs": {
-        "url": "https://github.com/ghoststools/Sourcebin"
+        "url": "https://github.com/ghostdevv/Sourcebin"
     }
 }

@@ -2,8 +2,7 @@
 
 [![](https://img.shields.io/npm/v/sourcebin?label=Latest%20Version&style=for-the-badge&logo=npm&color=informational)](https://www.npmjs.com/package/sourcebin)
 [![](https://img.shields.io/static/v1?label=Project%20Creator&message=GHOST&color=informational&style=for-the-badge)](https://ghostdev.xyz)
-[![](https://img.shields.io/github/workflow/status/ghoststools/Sourcebin/Test%20Suite%20CI?style=for-the-badge)](https://github.com/ghoststools/Sourcebin)
-[![](https://img.shields.io/static/v1?label=&message=A%20GHOSTs%20Tools%20Project&color=informational&style=for-the-badge)](https://github.com/ghoststools)
+[![](https://img.shields.io/github/workflow/status/ghostdevv/Sourcebin/Test%20Suite%20CI?style=for-the-badge)](https://github.com/ghostdevv/Sourcebin)
 
 Fast and simple package to get and create bins from [sourcebin](https://sourceb.in/)
 
@@ -66,13 +65,13 @@ const bin = await sourcebin.create(
 );
 ```
 
-#### Files
+### Files
 
 `name` - file name<br>
 `content` - file content (required)<br>
 `language` - language or language id (default text)<br>
 
-#### Options
+### Options
 
 `title` - bin title<br>
 `description` - bin description
@@ -96,4 +95,4 @@ const bin = await sourcebin.create(
 
 -   Message me on discord: `GHOST#7524`<br>
 -   Join the [discord](https://discord.gg/2Vd4wAjJnm)
--   Create a issue on the [github](https://github.com/ghoststools/Sourcebin)
+-   Create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
