@@ -69,7 +69,7 @@ const bin = await sourcebin.create(
 
 `name` - file name<br>
 `content` - file content (required)<br>
-`language` - language or language id (default text)<br>
+`language` - language or language id (Sourcebin will guess the language if none is given)<br>
 
 ### Options
 

@@ -17,7 +17,7 @@ module.exports = ({ name, content, language } = {}) => {
     if (!content || typeof content != 'string' || content.trim() == '')
         return new TypeError('Expected to recieve a valid item for content');
 
-    if (!resolveLanguageId(language))
+    if (language && !resolveLanguageId(language))
         return new SyntaxError('Invalid language given');
 
     return true;

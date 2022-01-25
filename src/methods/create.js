@@ -33,12 +33,13 @@ module.exports = async (files = [], options = {}) => {
         );
 
     for (const file of files) {
-        if (file.language == undefined) file.language = 'text';
-
         const valid = validateFile(file);
         if (valid != true) throw valid;
 
-        file.languageId = resolveLanguageId(file.language);
+        if (file.language) {
+            file.languageId = resolveLanguageId(file.language);
+        }
+
         delete file.language;
     }
 
