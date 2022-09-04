@@ -1,13 +1,25 @@
-import { languages } from '@sourcebin/linguist';
+import { languages, linguist } from '@sourcebin/linguist';
 
 export function resolveLanguageId(language: string | number) {
-    const languageId: number | undefined =
-        typeof language == 'number' ? language : languages[language];
+    if (typeof language == 'number') {
+        if (!Object.values(languages).includes(language))
+            throw new Error(`Unable to find language with id "${language}"`);
 
-    if (!languageId) throw new Error(`Unable to find language "${language}"`);
+        return language;
+    }
 
-    if (!Object.values(languages).includes(languageId))
-        throw new Error(`Unable to find language with id "${languageId}"`);
+    language = language.toLowerCase();
 
-    return languageId;
+    for (const [id, data] of Object.entries(linguist)) {
+        const hasLanguage =
+            data.name.toLowerCase() == language ||
+            data.aliases?.map((a) => a.toLowerCase()).includes(language);
+
+        if (hasLanguage) {
+            return Number(id);
+        }
+    }
+
+    // This runs if none of the above checks pass
+    throw new Error(`Unable to find language "${language}"`);
 }
