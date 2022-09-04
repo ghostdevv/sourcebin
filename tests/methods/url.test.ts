@@ -1,13 +1,16 @@
-const { url } = require('../../src/methods');
-
-const key = 'qXO2NVhRc6';
+import { url } from '../../src/methods/url';
+import assert from 'assert';
+import { test } from 'uvu';
 
 test('check url method works as expected', () => {
+    const key = 'qXO2NVhRc6';
     const data = url(key);
 
-    expect(data).toEqual({
+    assert.deepEqual(data, {
         key,
         url: `https://sourceb.in/${key}`,
         short: `http://srcb.in/${key}`,
     });
 });
+
+test.run();

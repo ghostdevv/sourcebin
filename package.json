@@ -15,20 +15,21 @@
         ]
     },
     "scripts": {
-        "test": "jest --verbose",
+        "test": "tsm node_modules/uvu/bin.js tests \".*\\.test\\.ts\"",
         "dev": "nodemon dev/index.js"
     },
     "license": "MIT",
     "dependencies": {
         "@sourcebin/linguist": "^0.0.3",
-        "axios": "^0.27.2",
-        "got": "^11.8.5"
+        "axios": "^0.27.2"
     },
     "devDependencies": {
-        "jest": "^27.5.1",
+        "@types/node": "^18.7.14",
         "nodemon": "^2.0.19",
+        "tsm": "^2.2.2",
         "tsup": "^6.2.3",
-        "typescript": "^4.8.2"
+        "typescript": "^4.8.2",
+        "uvu": "^0.5.6"
     },
     "keywords": [
         "sourcebin",
