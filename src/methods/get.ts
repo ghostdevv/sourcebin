@@ -1,4 +1,4 @@
-import type { BinData, GETBin } from '../types';
+import type { BinData, FileData, GETBin } from '../types';
 import type { AxiosResponse } from 'axios';
 import { resolveKey } from '../utils/url';
 import { Bin } from '../structures/Bin';
@@ -22,21 +22,28 @@ export const get = async (options: GetOptions) => {
 
     const { data }: AxiosResponse<GETBin> = await fetch(`/bins/${key}`);
 
+    const parsedFiles: FileData[] = [];
+
     if (fetchContent) {
         for (let i = 0; i < data.files.length; i++) {
-            const { data } = await fetch({
+            const index = i;
+
+            const { data: content } = await fetch({
                 baseURL: 'https://cdn.sourceb.in/',
-                url: `/bins/${key}/${i}`,
+                url: `/bins/${key}/${index}`,
                 responseType: 'text',
             });
 
-            data.files[i] = {
-                ...data.files[i],
-                content: data,
-                index: i,
-            };
+            parsedFiles.push({
+                ...data.files[index],
+                content,
+                index,
+            });
         }
     }
 
-    return new Bin(data as BinData);
+    return new Bin({
+        ...data,
+        files: parsedFiles,
+    });
 };
