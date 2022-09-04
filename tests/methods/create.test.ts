@@ -1,4 +1,5 @@
 import { create } from '../../src/methods/create';
+import { unreachable } from 'uvu/assert';
 import assert from 'assert';
 import { test } from 'uvu';
 
@@ -33,19 +34,22 @@ test('check that create method can have title and description', async () => {
 });
 
 test('check that multiple files throws an error', async () => {
-    assert.throws(
-        async () =>
-            await create({
-                files: [
-                    {
-                        content: 'test',
-                    },
-                    {
-                        content: 'test',
-                    },
-                ],
-            }),
-    );
+    try {
+        await create({
+            files: [
+                {
+                    content: 'test',
+                },
+                {
+                    content: 'test',
+                },
+            ],
+        });
+
+        unreachable("shouldn't work on multiple files");
+    } catch {
+        // Ok
+    }
 });
 
 test.run();
