@@ -7,7 +7,11 @@ import { get } from './get';
 interface FileOptions {
     name?: string;
     content: string;
-    language: number | string;
+
+    /**
+     * @default "text"
+     */
+    language?: number | string;
 }
 
 export interface CreateOptions {
@@ -34,7 +38,7 @@ export const create = async ({ files, ...options }: CreateOptions) => {
     };
 
     for (const file of files) {
-        const languageId = resolveLanguageId(file.language);
+        const languageId = resolveLanguageId(file.language || 'text');
 
         data.files.push({
             languageId,
