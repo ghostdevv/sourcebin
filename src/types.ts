@@ -27,3 +27,11 @@ export interface POSTBinsBody {
 export interface POSTBinsResponse {
     key: string;
 }
+
+export interface SourcebinLinguistItem {
+    name: string;
+    color: string;
+    extension: string;
+    aliases?: string[];
+    aceMode: string;
+}
