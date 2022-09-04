@@ -33,10 +33,10 @@ const { create, get, url } = require('sourcebin');
 
 # Get a bin
 
-`sourcebin.get(options)`
+`get(options)`
 
 ```js
-const bin = await sourcebin.get({
+const bin = await get({
     key: 'qXO2NVhRc6'
 });
 ```
@@ -50,10 +50,10 @@ const bin = await sourcebin.get({
 
 # Create a bin
 
-`sourcebin.create(options)`
+`create(options)`
 
 ```js
-const bin = await sourcebin.create(
+const bin = await create(
     {
         title: 'bin name',
         description: 'test bin',
@@ -66,35 +66,51 @@ const bin = await sourcebin.create(
     },
 );
 ```
+
 ## Options
 
-| Option         | Description                       | Default | Required |
-|----------------|-----------------------------------|---------|----------|
-| `key`          | The key to get                    | n/a     | ✅       |
-| `fetchContent` | Should the bin content be fetched | `true`  | ❌       |
+| Option         | Description            | Required |
+|----------------|------------------------|----------|
+| `title`        | Title of the bin       | ❌       |
+| `description`  | Description of the bin | ❌       |
+| `files`        | Bin files - see below  | ✅       |
 
-### Options
+### File Options
 
-`title` - bin title<br>
-`description` - bin description
+| Option         | Description                      | Default | Required |
+|----------------|----------------------------------|---------|----------|
+| `content`      | Contents of the file             | n/a     | ✅       |
+| `language`     | What language should the file be | `text`  | ❌       |
 
-# Other Methods
+# Url Helper
 
--   ### Url
+If you want to get information about a bin try the `url` function.
 
-    `sourcebin.url(key or url)`<br>
+```js
+const urlData = url('iQznILdZRP');
 
-    ```js
-    const { url, short } = url('qXO2NVhRc6');
-    ```
+// or
+
+const urlData = url('https://sourceb.in/iQznILdZRP');
+```
+
+This returns an object that looks like:
+
+```js
+{
+  key: 'iQznILdZRP',
+  url: 'https://sourceb.in/iQznILdZRP',
+  short: 'http://srcb.in/iQznILdZRP'
+}
+```
 
 # FAQ
 
 -   ### Multiple files in one bin
+
     This is not currently possible with this wrapper as sourcebin doesn't have a token system for authentication, only pro users are able to have multiple files in one bin. This may come in the future
 
 # Support
 
--   Message me on discord: `GHOST#7524`<br>
 -   Join the [discord](https://discord.gg/2Vd4wAjJnm)
 -   Create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
