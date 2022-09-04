@@ -4,7 +4,7 @@ import type { AxiosResponse } from 'axios';
 import { fetch } from '../utils/fetch';
 import { get } from './get';
 
-interface FileOptions {
+export interface FileOptions {
     name?: string;
     content: string;
 
