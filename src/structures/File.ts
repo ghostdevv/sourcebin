@@ -1,10 +1,5 @@
+import type { FileData, SourcebinLinguistItem } from '../types';
 import { linguist } from '@sourcebin/linguist';
-import { FileData } from '../types';
-
-// TODO improve
-type LinguistObject = typeof linguist extends Record<infer K, infer V>
-    ? V
-    : never;
 
 export class File {
     public readonly rawUrl: string;
@@ -13,7 +8,7 @@ export class File {
     public readonly content?: string;
 
     public readonly languageId: number;
-    public readonly language: LinguistObject;
+    public readonly language: SourcebinLinguistItem;
 
     constructor(key: string, data: FileData) {
         this.rawUrl = `https://cdn.sourceb.in/bins/${key}/${data.index}`;
