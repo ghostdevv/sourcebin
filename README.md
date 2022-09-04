@@ -18,6 +18,10 @@ NodeJS >= 14.x
 npm install sourcebin
 ```
 
+# Docs
+
+This README is the best place to learn how to use this package, you can also [take a look at our API docs](https://ghostdevv.github.io/Sourcebin/index.html)
+
 # Setup
 
 ```js
