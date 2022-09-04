@@ -106,9 +106,57 @@ This returns an object that looks like:
 
 # FAQ
 
--   ### Multiple files in one bin
+-   ## Multiple files in one bin
 
     This is not currently possible with this wrapper as sourcebin doesn't have a token system for authentication, only pro users are able to have multiple files in one bin. This may come in the future
+
+-   ## Migrate from v4 to v5
+
+    v5 is a overhaull of `sourcebin` so we changed some apis.
+
+    ### Get a bin
+
+    Instead of passing the `key` then `options` it's now one object.
+
+    ```diff
+    - const bin = await get('qXO2NVhRc6');
+    + const bin = await get({ key: 'qXO2NVhRc6' });
+
+    - const bin = await get('qXO2NVhRc6', { fetchContent: false });
+    + const bin = await get({ key: 'qXO2NVhRc6', fetchContent: false });
+    ```
+
+    ### Create a bin
+
+    We also unified the options for this function:
+    
+    ```diff
+    - const bin = await create(
+    -    [
+    -        {
+    -            content: 'Hello World',
+    -            language: 'text',
+    -        },
+    -    ],
+    -    {
+    -        title: 'bin name',
+    -        description: 'test bin',
+    -    },
+    - );
+
+    + const bin = await create(
+    +   {
+    +       title: 'bin name',
+    +       description: 'test bin',
+    +       files: [
+    +           {
+    +               content: 'Hello World',
+    +               language: 'text',
+    +           },
+    +       ],
+    +   }
+    +  );
+    ```
 
 # Support
 
