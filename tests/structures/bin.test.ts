@@ -12,7 +12,6 @@ test('can create bin', () => {
         description: 'test description',
         files: [
             {
-                index: 0,
                 languageId: 222,
                 content: 'test',
                 name: 'test name',
@@ -32,7 +31,6 @@ test('has expected fields', () => {
         description: 'test description',
         files: [
             {
-                index: 0,
                 languageId: 222,
                 content: 'test',
                 name: 'test name',
@@ -56,7 +54,6 @@ test('has files', () => {
         description: 'test description',
         files: [
             {
-                index: 0,
                 languageId: 222,
                 content: 'test',
                 name: 'test name',
@@ -66,8 +63,7 @@ test('has files', () => {
 
     assert.deepEqual(
         bin.files[0],
-        new File('qXO2NVhRc6', {
-            index: 0,
+        new File('qXO2NVhRc6', 0, {
             languageId: 222,
             content: 'test',
             name: 'test name',

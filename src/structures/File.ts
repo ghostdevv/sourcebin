@@ -10,8 +10,8 @@ export class File {
     public readonly languageId: number;
     public readonly language: SourcebinLinguistItem;
 
-    constructor(key: string, data: FileData) {
-        this.rawUrl = `https://cdn.sourceb.in/bins/${key}/${data.index}`;
+    constructor(key: string, index: number, data: FileData) {
+        this.rawUrl = `https://cdn.sourceb.in/bins/${key}/${index}`;
 
         this.name = data.name;
         this.content = data.content;

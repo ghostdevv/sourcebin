@@ -37,7 +37,6 @@ export const get = async (options: GetOptions) => {
             parsedFiles.push({
                 ...data.files[index],
                 content,
-                index,
             });
         }
     }

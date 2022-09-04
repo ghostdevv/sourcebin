@@ -3,7 +3,7 @@ import { BinData } from '../types';
 
 export class Bin {
     public readonly key: string;
-    
+
     public readonly url: string;
     public readonly shortUrl: string;
 
@@ -13,8 +13,8 @@ export class Bin {
 
     public readonly created: Date;
 
-    public readonly files: File[]
-    
+    public readonly files: File[];
+
     constructor(data: BinData) {
         this.key = data.key;
 
@@ -27,6 +27,6 @@ export class Bin {
 
         this.created = new Date(data.created);
 
-        this.files = data.files.map(f => new File(data.key, f));
+        this.files = data.files.map((f, index) => new File(data.key, index, f));
     }
 }

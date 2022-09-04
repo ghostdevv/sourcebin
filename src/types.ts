@@ -1,6 +1,5 @@
 export interface FileData {
     name?: string;
-    index: number;
     content?: string;
     languageId: number;
 }
@@ -15,13 +14,13 @@ export interface BinData {
 }
 
 export interface GETBin extends Omit<BinData, 'files'> {
-    files: Omit<FileData, 'content' | 'index'>[];
+    files: Omit<FileData, 'content'>[];
 }
 
 export interface POSTBinsBody {
     title?: string;
     description?: string;
-    files: Omit<FileData, 'index'>[];
+    files: FileData[];
 }
 
 export interface POSTBinsResponse {
