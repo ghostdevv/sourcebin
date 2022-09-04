@@ -1,7 +1,7 @@
 import { resolveKey } from '../utils/url';
 
-export const url = (binKey: string) => {
-    const key = resolveKey(binKey);
+export const url = (keyOrUrl: string) => {
+    const key = resolveKey(keyOrUrl);
 
     if (!key)
         throw new Error(
