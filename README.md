@@ -9,7 +9,7 @@ Fast and simple package to get and create bins from [sourcebin](https://sourceb.
 # Requirements
 
 ```
-NodeJS >= 10.x
+NodeJS >= 14.x
 ```
 
 # Install
@@ -20,56 +20,58 @@ npm install sourcebin
 
 # Setup
 
-Node JS
-
 ```js
-const sourcebin = require('sourcebin');
+// Import individual methods
+import { create, get, url } from 'sourcebin';
+
+// Import all methods
+import * as sourcebin from 'sourcebin';
+
+// Use required
+const { create, get, url } = require('sourcebin');
 ```
-
-TypeScript
-
-```ts
-import { get, create, url } from 'sourcebin';
-```
-
-For es imports such as the TypeScript import it's recommened you only import the methods you need
 
 # Get a bin
 
-`sourcebin.get(key or url, options)`
+`sourcebin.get(options)`
 
 ```js
-const bin = await sourcebin.get('qXO2NVhRc6');
+const bin = await sourcebin.get({
+    key: 'qXO2NVhRc6'
+});
 ```
 
-#### Options:
+## Options
 
-`fetchContent` - whether to fetch bin content or not (default true)
+| Option         | Description                       | Default | Required |
+|----------------|-----------------------------------|---------|----------|
+| `key`          | The key to get                    | n/a     | ✅       |
+| `fetchContent` | Should the bin content be fetched | `true`  | ❌       |
 
 # Create a bin
 
-`sourcebin.create([ files ], options)`<br>
+`sourcebin.create(options)`
 
 ```js
 const bin = await sourcebin.create(
-    [
-        {
-            content: 'Hello World',
-            language: 'text',
-        },
-    ],
     {
         title: 'bin name',
         description: 'test bin',
+        files: [
+            {
+                content: 'Hello World',
+                language: 'text',
+            },
+        ],
     },
 );
 ```
+## Options
 
-### Files
-
-`name` - file name<br>
-`content` - file content (required)<br>
-`language` - language or language id (Sourcebin will guess the language if none is given)<br>
+| Option         | Description                       | Default | Required |
+|----------------|-----------------------------------|---------|----------|
+| `key`          | The key to get                    | n/a     | ✅       |
+| `fetchContent` | Should the bin content be fetched | `true`  | ❌       |
 
 ### Options
 
