@@ -8,7 +8,7 @@ export interface GetOptions {
     /**
      * @default true
      */
-    fetchContent: boolean;
+    fetchContent?: boolean;
 
     /**
      * The key of the bin, can also be a sourcebin url
@@ -33,11 +33,10 @@ export const get = async (options: GetOptions) => {
             data.files[i] = {
                 ...data.files[i],
                 content: data,
-                index: i
+                index: i,
             };
         }
     }
 
-    return new Bin(data as BinData) 
+    return new Bin(data as BinData);
 };
- 
