@@ -1,6 +1,3 @@
-import get from './methods/get.js';
-import url from './methods/url.js';
-import create from './methods/create.js';
-
-export { get, url, create };
-export default { get, url, create };
+export { CreateOptions, create } from './methods/create';
+export { GetOptions, get } from './methods/get';
+export { url } from './methods/url';
