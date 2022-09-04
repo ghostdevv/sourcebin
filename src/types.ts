@@ -17,3 +17,13 @@ export interface BinData {
 export interface GETBin extends Omit<BinData, 'files'> {
     files: Omit<FileData, 'content' | 'index'>[];
 }
+
+export interface POSTBinsBody {
+    title?: string;
+    description?: string;
+    files: Omit<FileData, 'index'>[];
+}
+
+export interface POSTBinsResponse {
+    key: string;
+}
