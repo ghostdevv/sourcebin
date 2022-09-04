@@ -1,5 +1,5 @@
 import type { POSTBinsBody, POSTBinsResponse } from '../types';
-import { languages } from '@sourcebin/linguist';
+import { resolveLanguageId } from '../utils/languages';
 import type { AxiosResponse } from 'axios';
 import { fetch } from '../utils/fetch';
 import { get } from './get';
@@ -34,16 +34,7 @@ export const create = async ({ files, ...options }: CreateOptions) => {
     };
 
     for (const file of files) {
-        const languageId: number | undefined =
-            typeof file.language == 'number'
-                ? file.language
-                : languages[file.language];
-
-        if (!languageId)
-            throw new Error(`Unable to find language "${file.language}"`);
-
-        if (!Object.values(languages).includes(languageId))
-            throw new Error(`Unable to find language with id "${languageId}"`);
+        const languageId = resolveLanguageId(file.language);
 
         data.files.push({
             languageId,
