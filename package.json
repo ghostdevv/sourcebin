@@ -11,6 +11,11 @@
             "import": "./dist/index.mjs"
         }
     },
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
     "scripts": {
         "test": "tsm node_modules/uvu/bin.js tests \".*\\.test\\.ts\"",
         "dev": "nodemon dev/index.js",
