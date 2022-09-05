@@ -2,22 +2,20 @@
     "name": "sourcebin",
     "version": "4.3.6",
     "description": "Fast and simple package to get and create bins from https://sourceb.in/",
-    "main": "./src/index.cjs",
-    "module": "./src/index.mjs",
-    "types": "./src/index.d.ts",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
     "exports": {
-        ".": [
-            {
-                "require": "./src/index.cjs",
-                "import": "./src/index.mjs"
-            },
-            "./src/index.cjs"
-        ]
+        ".": {
+            "require": "./dist/index.js",
+            "import": "./dist/index.mjs"
+        }
     },
     "scripts": {
         "test": "tsm node_modules/uvu/bin.js tests \".*\\.test\\.ts\"",
         "dev": "nodemon dev/index.js",
-        "docs": "typedoc src/index.ts"
+        "docs": "typedoc src/index.ts",
+        "build": "tsup-node"
     },
     "license": "MIT",
     "dependencies": {
