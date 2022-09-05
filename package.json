@@ -44,12 +44,12 @@
         "sourcebin get"
     ],
     "author": "GHOST",
-    "homepage": "https://github.com/ghostdevv/Sourcebin",
+    "homepage": "https://github.com/ghostdevv/sourcebin",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ghostdevv/Sourcebin"
+        "url": "git+https://github.com/ghostdevv/sourcebin"
     },
     "bugs": {
-        "url": "https://github.com/ghostdevv/Sourcebin"
+        "url": "https://github.com/ghostdevv/sourcebin"
     }
 }

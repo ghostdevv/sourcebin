@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/npm/v/sourcebin?label=Latest%20Version&style=for-the-badge&logo=npm&color=informational)](https://www.npmjs.com/package/sourcebin)
 [![](https://img.shields.io/static/v1?label=Project%20Creator&message=GHOST&color=informational&style=for-the-badge)](https://ghostdev.xyz)
-[![](https://img.shields.io/github/workflow/status/ghostdevv/Sourcebin/Test%20Suite%20CI?style=for-the-badge)](https://github.com/ghostdevv/Sourcebin)
+[![](https://img.shields.io/github/workflow/status/ghostdevv/sourcebin/Test%20Suite%20CI?style=for-the-badge)](https://github.com/ghostdevv/sourcebin)
 
 Fast and simple package to get and create bins from [sourcebin](https://sourceb.in/)
 
@@ -20,7 +20,7 @@ npm install sourcebin
 
 # Docs
 
-This README is the best place to learn how to use this package, you can also [take a look at our API docs](https://ghostdevv.github.io/Sourcebin/index.html)
+This README is the best place to learn how to use this package, you can also [take a look at our API docs](https://ghostdevv.github.io/sourcebin/index.html)
 
 # Setup
 
@@ -165,4 +165,4 @@ This returns an object that looks like:
 # Support
 
 -   Join the [discord](https://discord.gg/2Vd4wAjJnm)
--   Create a issue on the [github](https://github.com/ghostdevv/Sourcebin)
+-   Create a issue on the [github](https://github.com/ghostdevv/sourcebin)
