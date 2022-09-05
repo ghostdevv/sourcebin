@@ -4,3 +4,5 @@ export { url } from './methods/url';
 
 export { File } from './structures/File';
 export { Bin } from './structures/Bin';
+
+export type { SourcebinLinguistItem, BinData, FileData } from './types';
