@@ -21,11 +21,11 @@ export interface CreateOptions {
     fetchContent?: boolean;
 }
 
-export const create = async ({ files, ...options }: CreateOptions) => {
-    if (!Array.isArray(files) || !files.length)
+export const create = async (options: CreateOptions) => {
+    if (!Array.isArray(options.files) || !options.files.length)
         throw new TypeError('Expected an array of one or more files');
 
-    if (files.length > 1) {
+    if (options.files.length > 1) {
         throw new Error(
             'You must have Sourcebin pro in order to have multiple files in one bin. This is currently not supported with this library',
         );
@@ -37,7 +37,7 @@ export const create = async ({ files, ...options }: CreateOptions) => {
         files: [],
     };
 
-    for (const file of files) {
+    for (const file of options.files) {
         const languageId = resolveLanguageId(file.language || 'text');
 
         data.files.push({
