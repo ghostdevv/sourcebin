@@ -3,13 +3,10 @@
 	"version": "5.0.0",
 	"description": "Fast and simple package to get and create bins from https://sourceb.in/",
 	"type": "module",
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
-			"require": "./dist/index.js",
-			"import": "./dist/index.mjs"
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
 		}
 	},
 	"files": [
@@ -21,9 +18,9 @@
 		"test": "node --no-warnings --experimental-strip-types --test",
 		"dev": "node --watch --no-warnings --experimental-strip-types dev/index.ts",
 		"docs": "typedoc src/index.ts",
-		"build": "tsup-node",
+		"build": "tsdown && publint",
 		"fix": "prettier --write .",
-		"check": "prettier --check . && tsc --noEmit"
+		"check": "prettier --check . && tsc --noEmit && publint"
 	},
 	"license": "MIT",
 	"dependencies": {
@@ -32,7 +29,8 @@
 	"devDependencies": {
 		"@types/node": "^22.13.17",
 		"prettier": "^3.8.3",
-		"tsup": "^6.2.3",
+		"publint": "^0.3.21",
+		"tsdown": "^0.22.0",
 		"typedoc": "^0.23.14",
 		"typescript": "^6.0.3"
 	},
