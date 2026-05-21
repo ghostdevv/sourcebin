@@ -1,5 +1,5 @@
-import { File } from '../structures/File';
-import { BinData } from '../types';
+import { File } from '../structures/File.ts';
+import type { BinData } from '../types.ts';
 
 export class Bin {
 	public readonly key: string;

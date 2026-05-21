@@ -1,8 +1,8 @@
-import type { POSTBinsBody, POSTBinsResponse } from '../types';
-import { resolveLanguageId } from '../utils/languages';
+import type { POSTBinsBody, POSTBinsResponse } from '../types.ts';
+import { resolveLanguageId } from '../utils/languages.ts';
 import type { AxiosResponse } from 'axios';
-import { fetch } from '../utils/fetch';
-import { get } from './get';
+import { fetch } from '../utils/fetch.ts';
+import { get } from './get.ts';
 
 export interface FileOptions {
 	name?: string;

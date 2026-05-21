@@ -1,4 +1,4 @@
-import { resolveKey } from '../utils/url';
+import { resolveKey } from '../utils/url.ts';
 
 export const url = (keyOrUrl: string) => {
 	const key = resolveKey(keyOrUrl);

@@ -1,8 +1,8 @@
-import type { BinData, FileData, GETBin } from '../types';
+import type { BinData, FileData, GETBin } from '../types.ts';
+import { resolveKey } from '../utils/url.ts';
 import type { AxiosResponse } from 'axios';
-import { resolveKey } from '../utils/url';
-import { Bin } from '../structures/Bin';
-import { fetch } from '../utils/fetch';
+import { Bin } from '../structures/Bin.ts';
+import { fetch } from '../utils/fetch.ts';
 
 export interface GetOptions {
 	/**

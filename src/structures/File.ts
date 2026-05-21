@@ -1,4 +1,4 @@
-import type { FileData, SourcebinLinguistItem } from '../types';
+import type { FileData, SourcebinLinguistItem } from '../types.ts';
 import { linguist } from '@sourcebin/linguist';
 
 export class File {
