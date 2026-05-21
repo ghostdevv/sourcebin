@@ -56,5 +56,6 @@
     },
     "bugs": {
         "url": "https://github.com/ghostdevv/sourcebin"
-    }
+    },
+   	"packageManager": "pnpm@11.2.1"
 }
