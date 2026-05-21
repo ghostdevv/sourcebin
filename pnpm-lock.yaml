@@ -29,13 +29,13 @@ importers:
         version: 2.3.0
       tsup:
         specifier: ^6.2.3
-        version: 6.7.0(typescript@4.9.5)
+        version: 6.7.0(typescript@6.0.3)
       typedoc:
         specifier: ^0.23.14
-        version: 0.23.28(typescript@4.9.5)
+        version: 0.23.28(typescript@6.0.3)
       typescript:
-        specifier: ^4.8.2
-        version: 4.9.5
+        specifier: ^6.0.3
+        version: 6.0.3
       uvu:
         specifier: ^0.5.6
         version: 0.5.6
@@ -863,9 +863,9 @@ packages:
     peerDependencies:
       typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x
 
-  typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   undefsafe@2.0.5:
@@ -1547,7 +1547,7 @@ snapshots:
     dependencies:
       esbuild: 0.15.18
 
-  tsup@6.7.0(typescript@4.9.5):
+  tsup@6.7.0(typescript@6.0.3):
     dependencies:
       bundle-require: 4.2.1(esbuild@0.17.19)
       cac: 6.7.14
@@ -1564,20 +1564,20 @@ snapshots:
       sucrase: 3.35.1
       tree-kill: 1.2.2
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
 
-  typedoc@0.23.28(typescript@4.9.5):
+  typedoc@0.23.28(typescript@6.0.3):
     dependencies:
       lunr: 2.3.9
       marked: 4.3.0
       minimatch: 7.4.9
       shiki: 0.14.7
-      typescript: 4.9.5
+      typescript: 6.0.3
 
-  typescript@4.9.5: {}
+  typescript@6.0.3: {}
 
   undefsafe@2.0.5: {}
 

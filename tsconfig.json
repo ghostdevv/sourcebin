@@ -1,10 +1,8 @@
 {
 	"compilerOptions": {
-		"target": "es2019",
+		"target": "ES2022",
 		"module": "esnext",
-		"outDir": "dist/esm",
-		"lib": ["ES2020"],
-
+		"lib": ["ES2022"],
 		"strict": true,
 		"declaration": true,
 		"strictNullChecks": true,
@@ -13,7 +11,8 @@
 		"noImplicitAny": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"moduleResolution": "node"
+		"moduleResolution": "bundler",
+		"types": ["node"]
 	},
 	"include": ["src/**/*.ts"]
 }
