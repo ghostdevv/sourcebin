@@ -12,7 +12,9 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"moduleResolution": "bundler",
-		"types": ["node"]
+		"types": ["node"],
+		"allowImportingTsExtensions": true,
+		"noEmit": true
 	},
-	"include": ["src/**/*.ts"]
+	"include": ["src/**/*.ts", "tests/**/*.ts"]
 }

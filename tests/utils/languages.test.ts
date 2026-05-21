@@ -1,6 +1,6 @@
-import { resolveLanguageId } from '../../src/utils/languages';
-import assert from 'assert';
-import { test } from 'uvu';
+import { resolveLanguageId } from '../../src/utils/languages.ts';
+import assert from 'node:assert';
+import { test } from 'node:test';
 
 test('returns expected id', () => {
 	const id = resolveLanguageId('JavaScript');

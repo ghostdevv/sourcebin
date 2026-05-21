@@ -1,7 +1,7 @@
-import { File } from '../../src/structures/File';
-import { Bin } from '../../src/structures/Bin';
-import assert from 'assert';
-import { test } from 'uvu';
+import { File } from '../../src/structures/File.ts';
+import { Bin } from '../../src/structures/Bin.ts';
+import assert from 'node:assert';
+import { test } from 'node:test';
 
 test('can create bin', () => {
 	const bin = new Bin({

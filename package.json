@@ -2,6 +2,7 @@
 	"name": "sourcebin",
 	"version": "5.0.0",
 	"description": "Fast and simple package to get and create bins from https://sourceb.in/",
+	"type": "module",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -17,7 +18,7 @@
 		"README.md"
 	],
 	"scripts": {
-		"test": "tsm node_modules/uvu/bin.js tests \".*\\.test\\.ts\"",
+		"test": "node --no-warnings --experimental-strip-types --test",
 		"dev": "nodemon dev/index.js",
 		"docs": "typedoc src/index.ts",
 		"build": "tsup-node",
@@ -33,11 +34,9 @@
 		"@types/node": "^22.13.17",
 		"nodemon": "^2.0.19",
 		"prettier": "^3.8.3",
-		"tsm": "^2.2.2",
 		"tsup": "^6.2.3",
 		"typedoc": "^0.23.14",
-		"typescript": "^6.0.3",
-		"uvu": "^0.5.6"
+		"typescript": "^6.0.3"
 	},
 	"keywords": [
 		"sourcebin",

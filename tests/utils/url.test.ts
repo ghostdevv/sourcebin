@@ -1,6 +1,6 @@
-import { resolveKey, getCdnUrl } from '../../src/utils/url';
-import assert from 'assert';
-import { test } from 'uvu';
+import { resolveKey, getCdnUrl } from '../../src/utils/url.ts';
+import assert from 'node:assert';
+import { test } from 'node:test';
 
 test('check cdn url is correct', () => {
 	const url = getCdnUrl('qXO2NVhRc6', 1);

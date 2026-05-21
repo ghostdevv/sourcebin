@@ -1,7 +1,6 @@
-import { create } from '../../src/methods/create';
-import { unreachable } from 'uvu/assert';
-import assert from 'assert';
-import { test } from 'uvu';
+import { create } from '../../src/methods/create.ts';
+import assert from 'node:assert';
+import { test } from 'node:test';
 
 test('check that create method returns expected response', async () => {
 	const res = await create({
@@ -34,8 +33,8 @@ test('check that create method can have title and description', async () => {
 });
 
 test('check that multiple files throws an error', async () => {
-	try {
-		await create({
+	assert.rejects(
+		create({
 			files: [
 				{
 					content: 'test',
@@ -44,12 +43,8 @@ test('check that multiple files throws an error', async () => {
 					content: 'test',
 				},
 			],
-		});
-
-		unreachable("shouldn't work on multiple files");
-	} catch {
-		// Ok
-	}
+		}),
+	);
 });
 
 test.run();

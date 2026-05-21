@@ -1,7 +1,7 @@
-import { File } from '../../src/structures/File';
-import { getCdnUrl } from '../../src/utils/url';
-import assert from 'assert';
-import { test } from 'uvu';
+import { File } from '../../src/structures/File.ts';
+import { getCdnUrl } from '../../src/utils/url.ts';
+import assert from 'node:assert';
+import { test } from 'node:test';
 
 test('can create file', () => {
 	const file = new File('qXO2NVhRc6', 0, {

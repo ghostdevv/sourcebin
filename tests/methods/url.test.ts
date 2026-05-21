@@ -1,6 +1,6 @@
-import { url } from '../../src/methods/url';
-import assert from 'assert';
-import { test } from 'uvu';
+import { url } from '../../src/methods/url.ts';
+import assert from 'node:assert';
+import { test } from 'node:test';
 
 test('check url method works as expected', () => {
 	const key = 'qXO2NVhRc6';
