@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"target": "ES2022",
 		"module": "esnext",
-		"lib": ["ES2022"],
+		"lib": ["ESNext"],
 		"strict": true,
 		"declaration": true,
 		"strictNullChecks": true,
