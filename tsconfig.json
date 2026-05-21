@@ -14,7 +14,8 @@
 		"moduleResolution": "bundler",
 		"types": ["node"],
 		"allowImportingTsExtensions": true,
-		"noEmit": true
+		"noEmit": true,
+		"verbatimModuleSyntax": true
 	},
 	"include": ["src/**/*.ts", "tests/**/*.ts"]
 }

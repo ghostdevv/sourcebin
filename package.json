@@ -23,7 +23,7 @@
 		"docs": "typedoc src/index.ts",
 		"build": "tsup-node",
 		"fix": "prettier --write .",
-		"check": "prettier --check ."
+		"check": "prettier --check . && tsc --noEmit"
 	},
 	"license": "MIT",
 	"dependencies": {
