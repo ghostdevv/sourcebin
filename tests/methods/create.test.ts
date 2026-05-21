@@ -32,7 +32,7 @@ test('check that create method can have title and description', async () => {
 	assert.equal(res.description, 'A test desc');
 });
 
-test('check that multiple files throws an error', async () => {
+test('check that multiple files throws an error', () => {
 	assert.rejects(
 		create({
 			files: [

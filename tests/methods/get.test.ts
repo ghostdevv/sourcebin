@@ -9,7 +9,7 @@ test('check that get method returns expected response', async () => {
 	assert.ok(res);
 });
 
-test('check that get method handles invalid key', async () => {
+test('check that get method handles invalid key', () => {
 	assert.rejects(get({ key: '123' }));
 });
 

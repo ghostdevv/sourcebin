@@ -1,4 +1,4 @@
-import { File } from '../../src/structures/File.ts';
+import { File } from '../../src/structures/file.ts';
 import { getCdnUrl } from '../../src/utils/url.ts';
 import assert from 'node:assert';
 import { test } from 'node:test';

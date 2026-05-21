@@ -1,7 +1,7 @@
 import { API_URL, CDN_URL, USER_AGENT } from '../utils/fetch.ts';
 import type { FileData, GETBin } from '../types.ts';
 import { resolveKey } from '../utils/url.ts';
-import { Bin } from '../structures/Bin.ts';
+import { Bin } from '../structures/bin.ts';
 
 export interface GetOptions {
 	/**

@@ -27,7 +27,7 @@ test("returns id if it's valid number id", () => {
 });
 
 test("errors if it's a invalid number id", () => {
-	assert.throws(() => resolveLanguageId(1908881247891));
+	assert.throws(() => resolveLanguageId(1_908_881_247_891));
 });
 
 test.run();

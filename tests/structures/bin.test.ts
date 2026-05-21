@@ -1,5 +1,5 @@
-import { File } from '../../src/structures/File.ts';
-import { Bin } from '../../src/structures/Bin.ts';
+import { File } from '../../src/structures/file.ts';
+import { Bin } from '../../src/structures/bin.ts';
 import assert from 'node:assert';
 import { test } from 'node:test';
 

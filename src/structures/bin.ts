@@ -1,4 +1,4 @@
-import { File } from '../structures/File.ts';
+import { File } from '../structures/file.ts';
 import type { BinData } from '../types.ts';
 
 export class Bin {

@@ -8,6 +8,7 @@ export function resolveLanguageId(language: string | number) {
 		return language;
 	}
 
+	// oxlint-disable-next-line no-param-reassign
 	language = language.toLowerCase();
 
 	for (const [id, data] of Object.entries(linguist)) {

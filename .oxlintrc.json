@@ -1,0 +1,19 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"extends": [
+		"./node_modules/@rlly/pedantic/oxlint/core.json",
+		"./node_modules/@rlly/pedantic/oxlint/e18e.json",
+		"./node_modules/@rlly/pedantic/oxlint/type-aware.json",
+		"./node_modules/@rlly/pedantic/oxlint/library.json"
+	],
+	"ignorePatterns": ["dist", "docs", "dev"],
+	"overrides": [
+		{
+			"files": ["./tests/**/*.ts"],
+			"rules": {
+				"typescript/no-floating-promises": "off",
+				"no-undefined": "off"
+			}
+		}
+	]
+}
