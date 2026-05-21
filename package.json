@@ -54,7 +54,7 @@
 	"homepage": "https://github.com/ghostdevv/sourcebin",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ghostdevv/sourcebin"
+		"url": "git+https://github.com/ghostdevv/sourcebin.git"
 	},
 	"bugs": {
 		"url": "https://github.com/ghostdevv/sourcebin"
