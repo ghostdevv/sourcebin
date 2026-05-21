@@ -1,9 +1,5 @@
-import axios from 'axios';
+import pkg from '../../package.json' with { type: 'json' };
 
-export const fetch = axios.create({
-	baseURL: 'https://sourceb.in/api',
-
-	headers: {
-		'User-Agent': `SourcebinJS https://www.npmjs.com/package/sourcebin`,
-	},
-});
+export const USER_AGENT = `sourcebin.js/${pkg.version} (+https://npmx.dev/package/sourcebin)`;
+export const API_URL = 'https://sourceb.in/api';
+export const CDN_URL = 'https://cdn.sourceb.in';

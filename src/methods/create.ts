@@ -1,7 +1,6 @@
 import type { POSTBinsBody, POSTBinsResponse } from '../types.ts';
+import { API_URL, USER_AGENT } from '../utils/fetch.ts';
 import { resolveLanguageId } from '../utils/languages.ts';
-import type { AxiosResponse } from 'axios';
-import { fetch } from '../utils/fetch.ts';
 import { get } from './get.ts';
 
 export interface FileOptions {
@@ -31,7 +30,7 @@ export const create = async (options: CreateOptions) => {
 		);
 	}
 
-	const data: POSTBinsBody = {
+	const body: POSTBinsBody = {
 		title: options.title,
 		description: options.description,
 		files: [],
@@ -40,20 +39,27 @@ export const create = async (options: CreateOptions) => {
 	for (const file of options.files) {
 		const languageId = resolveLanguageId(file.language || 'text');
 
-		data.files.push({
+		body.files.push({
 			languageId,
 			content: file.content,
 			name: file.name,
 		});
 	}
 
-	const res: AxiosResponse<POSTBinsResponse> = await fetch('/bins', {
+	const response = await fetch(`${API_URL}/bins`, {
 		method: 'POST',
-		data,
+		headers: {
+			'Content-Type': 'application/json',
+			Accept: 'application/json',
+			'User-Agent': USER_AGENT,
+		},
+		body: JSON.stringify(body),
 	});
 
+	const data = (await response.json()) as POSTBinsResponse;
+
 	return await get({
-		fetchContent: options.fetchContent || true,
-		key: res.data.key,
+		fetchContent: options.fetchContent ?? true,
+		key: data.key,
 	});
 };

@@ -1,8 +1,7 @@
-import type { BinData, FileData, GETBin } from '../types.ts';
+import { API_URL, CDN_URL, USER_AGENT } from '../utils/fetch.ts';
+import type { FileData, GETBin } from '../types.ts';
 import { resolveKey } from '../utils/url.ts';
-import type { AxiosResponse } from 'axios';
 import { Bin } from '../structures/Bin.ts';
-import { fetch } from '../utils/fetch.ts';
 
 export interface GetOptions {
 	/**
@@ -20,7 +19,14 @@ export const get = async (options: GetOptions) => {
 	const { fetchContent = true } = options;
 	const key = resolveKey(options.key);
 
-	const { data }: AxiosResponse<GETBin> = await fetch(`/bins/${key}`);
+	const response = await fetch(`${API_URL}/bins/${key}`, {
+		headers: {
+			Accept: 'application/json',
+			'User-Agent': USER_AGENT,
+		},
+	});
+
+	const data = (await response.json()) as GETBin;
 
 	const parsedFiles: FileData[] = [];
 
@@ -28,15 +34,15 @@ export const get = async (options: GetOptions) => {
 		for (let i = 0; i < data.files.length; i++) {
 			const index = i;
 
-			const { data: content } = await fetch({
-				baseURL: 'https://cdn.sourceb.in/',
-				url: `/bins/${key}/${index}`,
-				responseType: 'text',
+			const response = await fetch(`${CDN_URL}/bins/${key}/${index}`, {
+				headers: {
+					'User-Agent': USER_AGENT,
+				},
 			});
 
 			parsedFiles.push({
 				...data.files[index],
-				content,
+				content: await response.text(),
 			});
 		}
 	}

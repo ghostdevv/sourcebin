@@ -27,8 +27,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@sourcebin/linguist": "^0.0.3",
-		"axios": "^0.27.2"
+		"@sourcebin/linguist": "^0.0.3"
 	},
 	"devDependencies": {
 		"@types/node": "^22.13.17",
