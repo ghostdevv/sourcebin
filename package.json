@@ -30,7 +30,7 @@
 		"axios": "^0.27.2"
 	},
 	"devDependencies": {
-		"@types/node": "^18.7.14",
+		"@types/node": "^22.13.17",
 		"nodemon": "^2.0.19",
 		"prettier": "^3.8.3",
 		"tsm": "^2.2.2",
@@ -60,5 +60,12 @@
 	"bugs": {
 		"url": "https://github.com/ghostdevv/sourcebin"
 	},
-	"packageManager": "pnpm@11.2.1"
+	"packageManager": "pnpm@11.2.1",
+	"volta": {
+		"pnpm": "11.2.1",
+		"node": "22.13.0"
+	},
+	"engines": {
+		"node": ">=22.13.0"
+	}
 }
