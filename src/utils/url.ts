@@ -44,6 +44,6 @@ export const resolveKey = (keyOrUrl: string) => {
 		'',
 	);
 
-	const key = (sanitised.match(/[a-zA-Z0-9]{10}/g) || [])[0];
+	const key = (sanitised.match(/[a-zA-Z0-9]{10}/g) ?? [])[0];
 	return sanitised.length == 10 && key ? key : null;
 };

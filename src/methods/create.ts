@@ -83,7 +83,7 @@ export const create = async (options: CreateOptions) => {
 	};
 
 	for (const file of options.files) {
-		const languageId = resolveLanguageId(file.language || 'text');
+		const languageId = resolveLanguageId(file.language ?? 'text');
 
 		body.files.push({
 			languageId,
