@@ -3,23 +3,69 @@ import { API_URL, USER_AGENT } from '../utils/fetch.ts';
 import { resolveLanguageId } from '../utils/languages.ts';
 import { get } from './get.ts';
 
+/**
+ * Options for a file when creating a new sourcebin.
+ */
 export interface FileOptions {
+	/**
+	 * The name of the file.
+	 */
 	name?: string;
+
+	/**
+	 * The content of the file.
+	 */
 	content: string;
 
 	/**
+	 * The programming language identifier. Accepts a language name or ID.
 	 * @default "text"
 	 */
 	language?: number | string;
 }
 
+/**
+ * Options for creating a new sourcebin.
+ */
 export interface CreateOptions {
+	/**
+	 * The title of the sourcebin.
+	 */
 	title?: string;
+
+	/**
+	 * A description of the sourcebin.
+	 */
 	description?: string;
+
+	/**
+	 * An array of files to include in the sourcebin.
+	 */
 	files: FileOptions[];
+
+	/**
+	 * Whether to fetch the full content of the created sourcebin.
+	 * @default true
+	 */
 	fetchContent?: boolean;
 }
 
+/**
+ * Creates a new sourcebin from the provided options and returns a Bin instance.
+ *
+ * @param options - The options for creating the sourcebin.
+ * @returns A promise resolving to a Bin instance.
+ *
+ * @example
+ * ```js
+ * import { create } from 'sourcebin';
+ *
+ * const bin = await create({
+ *   title: 'My Example',
+ *   files: [{ name: 'hello.ts', content: 'console.log("Hello, world!");' }],
+ * });
+ * ```
+ */
 export const create = async (options: CreateOptions) => {
 	if (!Array.isArray(options.files) || !options.files.length)
 		throw new TypeError('Expected an array of one or more files');
