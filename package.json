@@ -19,7 +19,7 @@
 	],
 	"scripts": {
 		"test": "node --no-warnings --experimental-strip-types --test",
-		"dev": "nodemon dev/index.js",
+		"dev": "node --watch --no-warnings --experimental-strip-types dev/index.ts",
 		"docs": "typedoc src/index.ts",
 		"build": "tsup-node",
 		"fix": "prettier --write .",
@@ -32,7 +32,6 @@
 	},
 	"devDependencies": {
 		"@types/node": "^22.13.17",
-		"nodemon": "^2.0.19",
 		"prettier": "^3.8.3",
 		"tsup": "^6.2.3",
 		"typedoc": "^0.23.14",
