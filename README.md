@@ -41,14 +41,14 @@ const { create, get, url } = require('sourcebin');
 
 ```js
 const bin = await get({
-    key: 'qXO2NVhRc6'
+	key: 'qXO2NVhRc6',
 });
 ```
 
 ## Options
 
 | Option         | Description                       | Default | Required |
-|----------------|-----------------------------------|---------|----------|
+| -------------- | --------------------------------- | ------- | -------- |
 | `key`          | The key to get                    | n/a     | ✅       |
 | `fetchContent` | Should the bin content be fetched | `true`  | ❌       |
 
@@ -57,34 +57,32 @@ const bin = await get({
 `create(options)`
 
 ```js
-const bin = await create(
-    {
-        title: 'bin name',
-        description: 'test bin',
-        files: [
-            {
-                content: 'Hello World',
-                language: 'text',
-            },
-        ],
-    },
-);
+const bin = await create({
+	title: 'bin name',
+	description: 'test bin',
+	files: [
+		{
+			content: 'Hello World',
+			language: 'text',
+		},
+	],
+});
 ```
 
 ## Options
 
-| Option         | Description            | Required |
-|----------------|------------------------|----------|
-| `title`        | Title of the bin       | ❌       |
-| `description`  | Description of the bin | ❌       |
-| `files`        | Bin files - see below  | ✅       |
+| Option        | Description            | Required |
+| ------------- | ---------------------- | -------- |
+| `title`       | Title of the bin       | ❌       |
+| `description` | Description of the bin | ❌       |
+| `files`       | Bin files - see below  | ✅       |
 
 ### File Options
 
-| Option         | Description                      | Default | Required |
-|----------------|----------------------------------|---------|----------|
-| `content`      | Contents of the file             | n/a     | ✅       |
-| `language`     | What language should the file be | `text`  | ❌       |
+| Option     | Description                      | Default | Required |
+| ---------- | -------------------------------- | ------- | -------- |
+| `content`  | Contents of the file             | n/a     | ✅       |
+| `language` | What language should the file be | `text`  | ❌       |
 
 # Url Helper
 
@@ -110,11 +108,11 @@ This returns an object that looks like:
 
 # FAQ
 
--   ## Multiple files in one bin
+- ## Multiple files in one bin
 
     This is not currently possible with this wrapper as sourcebin doesn't have a token system for authentication, only pro users are able to have multiple files in one bin. This may come in the future
 
--   ## Migrate from v4 to v5
+- ## Migrate from v4 to v5
 
     v5 is a overhaull of `sourcebin` so we changed some apis.
 
@@ -133,7 +131,7 @@ This returns an object that looks like:
     ### Create a bin
 
     We also unified the options for this function:
-    
+
     ```diff
     - const bin = await create(
     -    [
@@ -164,5 +162,5 @@ This returns an object that looks like:
 
 # Support
 
--   Join the [discord](https://discord.gg/2Vd4wAjJnm)
--   Create a issue on the [github](https://github.com/ghostdevv/sourcebin)
+- Join the [discord](https://discord.gg/2Vd4wAjJnm)
+- Create a issue on the [github](https://github.com/ghostdevv/sourcebin)

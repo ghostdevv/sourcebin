@@ -1,63 +1,63 @@
 name: Release Package & Test
 
 on:
-  release:
-    types: [created]
+    release:
+        types: [created]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+    test:
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
+        strategy:
+            matrix:
+                node-version: [14.x, 16.x, 18.x]
 
-    steps:
-      - uses: actions/checkout@v2
-        
-      - name: Setup Node 16
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
+        steps:
+            - uses: actions/checkout@v2
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 7.0.0
+            - name: Setup Node 16
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16
+                  registry-url: https://registry.npmjs.org/
 
-      - name: Install
-        run: pnpm install
+            - name: Setup PNPM
+              uses: pnpm/action-setup@v2.0.1
+              with:
+                  version: 7.0.0
 
-      - name: Test
-        run: pnpm test
+            - name: Install
+              run: pnpm install
 
-  publish-npm:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+            - name: Test
+              run: pnpm test
 
-      - name: Setup Node 16
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
+    publish-npm:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2.0.1
-        with:
-            version: 7.0.0
+            - name: Setup Node 16
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16
+                  registry-url: https://registry.npmjs.org/
 
-      - name: Install
-        run: pnpm install
+            - name: Setup PNPM
+              uses: pnpm/action-setup@v2.0.1
+              with:
+                  version: 7.0.0
 
-      - name: Build
-        run: pnpm build
+            - name: Install
+              run: pnpm install
 
-      - name: Publish
-        run: |
-          pnpm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
-          pnpm publish --no-git-checks
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+            - name: Build
+              run: pnpm build
+
+            - name: Publish
+              run: |
+                  pnpm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
+                  pnpm publish --no-git-checks
+              env:
+                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
