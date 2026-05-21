@@ -10,6 +10,7 @@
 			"default": "./dist/index.mjs"
 		}
 	},
+	"sideEffects": false,
 	"files": [
 		"dist",
 		"LICENSE",
