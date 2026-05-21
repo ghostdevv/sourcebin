@@ -48,7 +48,7 @@
         "sourcebin create",
         "sourcebin get"
     ],
-    "author": "GHOST",
+    "author": "Willow GHOST <hello@willow.sh>",
     "homepage": "https://github.com/ghostdevv/sourcebin",
     "repository": {
         "type": "git",
