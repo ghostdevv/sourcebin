@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v6.0.1
+
+[compare changes](https://github.com/ghostdevv/sourcebin/compare/v6.0.0...v6.0.1)
+
+### 🩹 Fixes
+
+- Add top level types field for npm ui types detection ([81ca108](https://github.com/ghostdevv/sourcebin/commit/81ca108))
+- Add sideEffects false ([9920b35](https://github.com/ghostdevv/sourcebin/commit/9920b35))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v6.0.0
 
 [compare changes](https://github.com/ghostdevv/sourcebin/compare/v5.0.0...v6.0.0)
